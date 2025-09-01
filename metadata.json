@@ -1,0 +1,5 @@
+{
+  "name": "AI Plagiarism Detector",
+  "description": "An advanced tool to detect plagiarism from internet sources and AI-generated content using Google's Gemini API. The tool provides a plagiarism score, highlights copied sections, and lists potential sources.",
+  "requestFramePermissions": []
+}

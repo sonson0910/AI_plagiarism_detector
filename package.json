@@ -1,0 +1,43 @@
+{
+  "name": "ai-plagiarism-detector",
+  "version": "1.0.0",
+  "description": "An advanced tool to detect plagiarism from internet sources and AI-generated content using Google's Gemini API.",
+  "main": "electron/main.js",
+  "scripts": {
+    "build": "esbuild index.tsx --bundle --outfile=bundle.js --platform=browser --jsx=automatic --external:@google/genai",
+    "start": "npm run build && electron .",
+    "dist": "npm run build && electron-builder"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "electron": "^31.2.1",
+    "electron-builder": "^24.13.3",
+    "esbuild": "^0.23.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "build": {
+    "appId": "com.example.ai-plagiarism-detector",
+    "productName": "AI Plagiarism Detector",
+    "files": [
+      "electron/",
+      "index.html",
+      "bundle.js"
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "mac": {
+      "target": "dmg"
+    },
+    "linux": {
+      "target": "AppImage"
+    }
+  }
+}
